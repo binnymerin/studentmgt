@@ -1,0 +1,37 @@
+from myapp import views
+from django.urls import path
+
+
+urlpatterns=[
+    path("",views.index),
+    path("reg/",views.reg),
+    path("login/",views.login),
+    path("user/",views.user),
+    path("teacher/",views.teacher),
+    path("principal/",views.admin),
+    path("teach/",views.teach),
+    path("students/",views.students),
+    path("teachers/",views.teachers),
+    path("mystudents/",views.mystudents),
+    path("mark/",views.add_marks),
+    path("mark_attendence/",views.mark_attendence),
+    path("mark_present/<id>/", views.mark_present),
+    path("mark_absent/<id>/", views.mark_absent),
+    path("cancel_att/<id>/", views.cancel_att),
+    path("stdform/<id>/",views.stdform),
+    path("studentsmark/",views.studentsmark),
+    path("mymarks/",views.mymarks),
+    path("stdattendance/",views.stdattendance),
+    path("form/",views.form),
+    path("studentleave/",views.studentleave),
+    path("timetable/",views.timetable1),
+    path("viewstdleave/",views.viewstdleave),
+    path("teacherleave/",views.teacherleave),
+    path("app_tchr/<id>/",views.app_tchr),
+    path("rej_tchr/<id>/",views.rej_tchr),
+    path("app_std/<id>/",views.app_std),
+    path("rej_std/<id>/",views.rej_std),
+    path("timetab/",views.timetab),
+    path("profile/",views.profile),
+    path("profile1/",views.profile1),
+]

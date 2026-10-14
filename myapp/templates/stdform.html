@@ -1,0 +1,73 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>Contact Form 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'stdform/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section img bg-hero" style="background-image: url('{% static 'stdform/images/bg_1.jpg' %}');">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Mark List</h2>
+				</div>
+			</div>
+
+									<form method="POST" >
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-md-7">
+												<div class="form-group">
+													<input type="text" class="form-control" name="student" id="student" value="{{name}}" placeholder="student">
+												</div>
+											</div>
+											<div class="col-md-7">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="subject">
+												</div>
+											</div>
+											<div class="col-md-7">
+												<div class="form-group">
+													<input type="text" class="form-control" name="mark" id="mark" placeholder="mark">
+												</div>
+											</div>
+											<div class="col-md-7">
+												<div class="form-group">
+													<input type="text" class="form-control" name="grade" id="grade" placeholder="grade">
+												</div>
+											</div>
+											<div class="col-md-7">
+												<div class="form-group">
+													<input type="submit" value="submit" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'stdform/js/jquery.min.js' %}"></script>
+  <script src="{% static 'stdform/js/popper.js' %}"></script>
+  <script src="{% static 'stdform/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'stdform/js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'stdform/js/main.js' %}"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,109 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>Contact Form 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'profile/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h1 class="heading-section">Profile</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10 col-md-12">
+					<div class="wrapper">
+						<div class="row justify-content-center">
+							<div class="col-lg-8 mb-5">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="dbox w-100 text-center">
+
+
+					          </div>
+									</div>
+									<div class="col-md-4">
+										<div class="dbox w-100 text-center">
+
+
+					          </div>
+									</div>
+									<div class="col-md-4">
+										<div class="dbox w-100 text-center">
+
+
+					          </div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="contact-wrap">
+									<div id="form-message-warning" class="mb-4 w-100 text-center"></div>
+				      		<div id="form-message-success" class="mb-4 w-100 text-center">
+				            Your message was sent, thank you!
+				      		</div>
+									<form method="POST"  class="contactForm">
+										{% csrf_token %}
+										{% for i in prf %}
+										<div class="row">
+											<div class="col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" value="{{i.name}}" id="name" placeholder="name">
+												</div>
+											</div>
+
+											<div class="col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control" name="address" value="{{i.address}}" id="address" placeholder="address">
+												</div>
+											</div>
+
+											<div class="col-md-8">
+												<div class="form-group">
+													<input type="email" class="form-control" name="email" value="{{i.email}}" id="email" placeholder="email">
+												</div>
+											</div>
+											<div class="col-md-8">
+												<div class="form-group">
+													<input type="text" class="form-control" name="password" value="{{i.password}}" id="password" placeholder="password">
+												</div>
+											</div>
+
+											<div class="col-md-8">
+												<div class="form-group">
+													<input type="submit" value="submit" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'profile/js/jquery.min.js' %}"></script>
+  <script src="{% static 'profile/js/popper.js' %}"></script>
+  <script src="{% static 'profile/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'profile/js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'profile/js/main.js' %}"></script>
+
+	</body>
+</html>
+

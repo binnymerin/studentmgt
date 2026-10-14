@@ -1,0 +1,73 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>Table 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'mark/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Add Mark</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th>#</th>
+						      <th>Name</th>
+						      <th>Father Name</th>
+						      <th>Address</th>
+								<th>Gender</th>
+								 <th>Birth Date</th>
+								 <th>Pincode</th>
+								 <th>Class</th>
+								 <th>Email</th>
+								<th>Action</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for i in std %}
+						    <tr>
+						      <th scope="row">{{forloop.counter}}</th>
+						      <td>{{i.name}}</td>
+						      <td>{{i.father_name}}</td>
+						      <td>{{i.address}}</td>
+								 <td>{{i.gender}}</td>
+								 <td>{{i.birth_date}}</td>
+								 <td>{{i.pincode}}</td>
+								 <td>{{i.Class}}</td>
+								 <td>{{i.email}}</td>
+								<td><a href="/stdform/{{i.id}}/">Add Mark</a></td>
+						    </tr>
+						  {% endfor %}
+
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'mark/js/jquery.min.js' %}"></script>
+  <script src="{% static 'mark/js/popper.js' %}"></script>
+  <script src="{% static 'mark/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'mark/js/main.js' %}"></script>
+
+	</body>
+</html>
+

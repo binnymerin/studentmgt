@@ -1,0 +1,87 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+  	<title>Table 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'attendence/css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Attendance</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th>#</th>
+						      <th>Name</th>
+								<th>Gender</th>
+								 <th>Class</th>
+								 <th>Action</th>
+								 <th></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for i in std %}
+						    <tr>
+						      <th scope="row">{{forloop.counter}}</th>
+						      <td>{{i.name}}</td>
+								 <td>{{i.gender}}</td>
+								 <td>{{i.Class}}</td>
+								 <td><a href="/mark_present/{{i.id}}/">Present</a></td>
+								 <td><a href="/mark_absent/{{i.id}}/">Absent</a></td>
+						    </tr>
+						  {% endfor %}
+
+						  </tbody>
+						</table>
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th>#</th>
+						      <th>Name</th>
+								<th>Status</th>
+								 <th>Action</th>
+								 <th></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  {% for i in stds %}
+						    <tr>
+						      <th scope="row">{{forloop.counter}}</th>
+						      <td>{{i.std.name}}</td>
+								 <td>{{i.att.status}}</td>
+								 <td><a href="/cancel_att/{{i.att.id}}/">Cancel</a></td>
+						    </tr>
+						  {% endfor %}
+
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'attendence/js/jquery.min.js' %}"></script>
+  <script src="{% static 'attendence/js/popper.js' %}"></script>
+  <script src="{% static 'attendence/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'attendence/js/main.js' %}"></script>
+
+	</body>
+</html>
+
